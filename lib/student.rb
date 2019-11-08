@@ -2,7 +2,7 @@ class Student
   attr_accessor :id, :name, :grade
 
   def self.new_from_db(row)
-    self.new
+    new_student = self.new()
   end
 
   def self.all
