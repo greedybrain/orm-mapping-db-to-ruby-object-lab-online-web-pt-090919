@@ -66,14 +66,14 @@ def self.students_below_12th_grade
     DB[:conn].execute(sql).map{|row| self.new_from_db(row)}.first
   end
   
-  def self.all_students_in_grade_X(x)
+  def self.all_students_in_grade_X(grade)
     sql = <<-SQL 
       SELECT * 
       FROM students 
       WHERE grade = ?
     SQL
     
-    DB[:conn].execute
+    DB[:conn].execute(sql, grade)).map{|row| self.new_from_db}
   end
   
   def self.all 
