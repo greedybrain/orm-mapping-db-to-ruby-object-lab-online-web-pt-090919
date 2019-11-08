@@ -66,6 +66,8 @@ def self.students_below_12th_grade
     DB[:conn].execute(sql).map{|row| self.new_from_db(row)}.first
   end
   
+  def self.
+  
   def self.all 
     sql = <<-SQL
       SELECT * 
