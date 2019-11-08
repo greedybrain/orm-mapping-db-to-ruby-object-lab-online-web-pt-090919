@@ -49,7 +49,7 @@ def self.students_below_12th_grade
       SELECT *
       FROM students 
       WHERE grade = 10 
-      LIMIT 2
+      LIMIT #{amt}
     SQL
     
     DB[:conn].execute(sql).map{|row| self.new_from_db(row)}
